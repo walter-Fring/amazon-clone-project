@@ -46,6 +46,10 @@
   font-size: 16px;
 }
 
+.search-input:focus {
+  outline: solid 2px rgb(255, 153, 0);
+}
+
 .search-btn {
   display: flex;
   align-items: center;
