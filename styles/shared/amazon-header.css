@@ -72,6 +72,12 @@
   padding: 6px;
   text-decoration: none;
   color: white;
+  border: 1px solid transparent;
+  transition: border 0.15ms;
+}
+
+.amazon-header .header-link:hover {
+  border: 1px solid white;
 }
 
 .orders-link {
