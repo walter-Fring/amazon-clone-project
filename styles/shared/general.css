@@ -2,3 +2,16 @@ body {
   font-family: Roboto, Arial;
   margin: 0;
 }
+
+p {
+  margin: 0;
+}
+
+.limit-text-to-2-lines {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  white-space: normal;
+}
