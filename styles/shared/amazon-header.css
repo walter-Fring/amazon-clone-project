@@ -5,6 +5,10 @@
   padding-right: 16px;
   height: 60px;
   background-color: rgb(19, 25, 33);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 
 .right-section,
