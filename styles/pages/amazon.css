@@ -106,3 +106,7 @@
 .primary-btn:hover {
   background-color: rgb(247, 202, 0);
 }
+
+main {
+  margin-top: 60px;
+}

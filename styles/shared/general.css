@@ -7,10 +7,6 @@ p {
   margin: 0;
 }
 
-main {
-  margin-top: 60px;
-}
-
 .limit-text-to-2-lines {
   overflow: hidden;
   display: -webkit-box;
