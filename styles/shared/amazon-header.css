@@ -11,24 +11,24 @@
   right: 0;
 }
 
-.right-section,
-.middle-section,
-.left-section {
+.amazon-header .right-section,
+.amazon-header .middle-section,
+.amazon-header .left-section {
   display: flex;
   align-items: center;
 }
 
-.right-section {
+.amazon-header .right-section {
   width: 180px;
   padding: 6px;
 }
 
-.middle-section {
+.amazon-header .middle-section {
   flex: 1;
   max-width: 850px;
 }
 
-.left-section {
+.amazon-header .left-section {
   width: 180px;
 }
 
