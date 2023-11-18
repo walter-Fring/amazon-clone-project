@@ -1,11 +1,8 @@
 main {
   max-width: 1100px;
+  margin-top: 140px;
   padding-left: 32px;
   padding-right: 32px;
-  margin-top: 140px;
-  margin-bottom: 104px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .page-title {
@@ -55,17 +52,6 @@ main {
   font-weight: 700;
   color: rgb(177, 39, 4);
   margin-bottom: 4px;
-}
-
-.link-primary {
-  color: #017cb6;
-  margin-left: 4px;
-  cursor: pointer;
-  transition: color 0.15ms;
-}
-
-.link-primary:hover {
-  color: rgb(196, 80, 0);
 }
 
 .new-quantity-input {

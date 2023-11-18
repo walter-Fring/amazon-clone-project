@@ -1,0 +1,67 @@
+.back-orders-link {
+  display: inline-block;
+  margin-left: 0px;
+  margin-bottom: 24px;
+}
+
+.order-tracking .order-details
+.delivery-date {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.order-tracking .order-details
+.product-name {
+  margin-bottom: 4px;
+}
+
+.order-tracking .order-details
+.quantity {
+  margin-bottom: 24px;
+}
+
+.order-tracking .product-image-container {
+  width: 140px;
+  margin-bottom: 40px;
+}
+
+.order-tracking .product-image-container
+.product-image {
+  width: 100%;
+}
+
+.order-tracking .progress-bar
+.progress-labels-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.order-tracking .progress-bar
+.progress-label {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.order-tracking .progress-bar
+.current-status-label {
+  color: rgb(6, 125, 98);
+}
+
+.order-tracking .progress-bar
+.progress-bar-container {
+  width: 100%;
+  height: 24px;
+  background-color: white;
+  border: 1px solid rgb(200, 200, 200);
+  border-radius: 50px;
+}
+
+.order-tracking .progress-bar 
+.progress-bar-container .progress-bar-indicator {
+  width: 16%;
+  height: 100%;
+  background-color: green;
+  border-radius: 50px;
+}

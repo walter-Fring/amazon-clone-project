@@ -7,6 +7,16 @@ p {
   margin: 0;
 }
 
+main {
+  max-width: 848px;
+  margin-top: 88px;
+  margin-bottom: 104px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
 .limit-text-to-2-lines {
   overflow: hidden;
   display: -webkit-box;
@@ -38,4 +48,15 @@ p {
 
 .secondary-btn:hover {
   background-color: #F7FAFA;
+}
+
+.link-primary {
+  color: #017cb6;
+  margin-left: 4px;
+  cursor: pointer;
+  transition: color 0.15ms;
+}
+
+.link-primary:hover {
+  color: rgb(196, 80, 0);
 }
