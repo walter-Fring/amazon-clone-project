@@ -95,6 +95,10 @@ main {
   color: rgb(6, 125, 98);
 }
 
+.add-to-cart-visible {
+  opacity: 1;
+}
+
 .add-to-cart-btn {
   width: 100%;
   padding: 8px;
