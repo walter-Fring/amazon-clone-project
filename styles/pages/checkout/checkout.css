@@ -63,13 +63,18 @@ main {
   outline: 2px solid rgb(255, 153, 0);
 }
 
-.cart-item-container 
-.new-quantity-input {
+.new-quantity-input,
+.save-quantity-link {
   display: none;
 }
 
-.cart-item-container 
-.save-quantity-link {
+.is-editing-quantity .new-quantity-input,
+.is-editing-quantity .save-quantity-link {
+  display: initial;
+}
+
+.is-editing-quantity .update-quantity-link,
+.is-editing-quantity .quantity-label {
   display: none;
 }
 

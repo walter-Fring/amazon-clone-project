@@ -1,4 +1,4 @@
-export const cart = initializedCart();
+export let cart = initializedCart();
 
 export default cart;
 
@@ -20,6 +20,18 @@ export function addToCart(productId) {
   saveToLocalStorage();
 };
 
+export function updateQuantity(productId, newQuantity) {
+  const matchingItem = getItem(productId);
+  matchingItem.quantity = newQuantity;
+  saveToLocalStorage();
+};
+
+export function removeItemFromCart(productId) {
+  const newCart = cart.filter((cartItem) => cartItem.productId !== productId);
+  cart = newCart;
+  saveToLocalStorage();
+};
+
 export function calculateCartQuantity() {
   let cartQuantity = 0;
 
@@ -34,7 +46,7 @@ function getItem(productId) {
   let matchingItem;
 
   cart.forEach((cartItem) => {
-    if (productId === cartItem.id) {
+    if (productId === cartItem.productId) {
       matchingItem = cartItem;
     }
   });
