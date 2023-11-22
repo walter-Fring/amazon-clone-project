@@ -82,6 +82,7 @@ main {
   display: flex;
   align-items: center;
   margin-bottom: 14px;
+  cursor: pointer;
 }
 
 .delivery-options-title {
@@ -93,7 +94,6 @@ main {
   width: 18px;
   height: 18px;
   margin: 0 4px 0 0;
-  cursor: pointer;
 }
 
 .delivery-option-date {

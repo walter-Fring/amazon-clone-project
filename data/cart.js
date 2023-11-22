@@ -13,7 +13,8 @@ export function addToCart(productId) {
   } else {
     cart.push({
       productId,
-      quantity
+      quantity,
+      deliveryOptionId: '1'
     });
   }
 
@@ -42,7 +43,7 @@ export function calculateCartQuantity() {
   return cartQuantity;
 };
 
-function getItem(productId) {
+export function getItem(productId) {
   let matchingItem;
 
   cart.forEach((cartItem) => {
@@ -58,15 +59,17 @@ function initializedCart() {
   return JSON.parse(localStorage.getItem('cart')) || [
     {
       productId: "e23b3vce-6aa0-4b85-b27f-e1d07eb678c6",
-      quantity: 3
+      quantity: 3,
+      deliveryOptionId: '1'
     },
     {
       productId: "e43638ce-6aa0-4b85-b27f-e1d07eb678c6",
-      quantity: 2
+      quantity: 2,
+      deliveryOptionId: '2'
     }
   ];
 }
 
-function saveToLocalStorage() {
+export function saveToLocalStorage() {
   localStorage.setItem('cart', JSON.stringify(cart));
 };
