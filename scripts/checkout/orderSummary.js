@@ -1,6 +1,4 @@
 import { getProduct } from '../../data/products.js';
-import formatPrice from '../utils/formatPrice.js';
-import renderCheckoutPage from '../checkout.js';
 
 import { 
   deliveryOptions, 
@@ -15,6 +13,9 @@ import {
   updateQuantity,
   removeItemFromCart 
 } from '../../data/cart.js';
+
+import formatPrice from '../utils/formatPrice.js';
+import renderCheckoutPage from '../checkout.js';
 
 export function renderOrderSummary() {
   let orderSummaryHTML = '';
