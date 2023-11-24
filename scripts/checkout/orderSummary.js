@@ -1,6 +1,6 @@
 import { getProduct } from '../../data/products.js';
 import formatPrice from '../utils/formatPrice.js';
-import renderCheckoutHeader from './checkoutHeader.js';
+import renderCheckoutPage from '../checkout.js';
 
 import { 
   deliveryOptions, 
@@ -98,7 +98,7 @@ export function renderOrderSummary() {
     deliveryOption.addEventListener('click', () => {
       const { productId, deliveryOptionId } = deliveryOption.dataset;
       updateDeliveryOption(productId, deliveryOptionId);
-      renderOrderSummary();
+      renderCheckoutPage();
     });
   });
 
@@ -122,8 +122,7 @@ export function renderOrderSummary() {
     deleteLink.addEventListener('click', () => {
       const { productId } = deleteLink.dataset;
       removeItemFromCart(productId);
-      renderCheckoutHeader();
-      renderOrderSummary();
+      renderCheckoutPage();
     });
   });
 
@@ -143,8 +142,7 @@ export function renderOrderSummary() {
     }
 
     updateQuantity(productId, newQuantity);
-    renderOrderSummary();
-    renderCheckoutHeader();
+    renderCheckoutPage();
 
     const cartItemContainer = getItemContainer(productId);
     cartItemContainer.classList.remove('is-editing-quantity');

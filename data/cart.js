@@ -1,7 +1,5 @@
 export let cart = initializedCart();
 
-export default cart;
-
 export function addToCart(productId) {
   const selectElem = document.querySelector(`.js-quantity-selector-${productId}`);
   const quantity = Number(selectElem.value);
