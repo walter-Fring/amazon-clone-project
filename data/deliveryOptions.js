@@ -1,5 +1,5 @@
 import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
-import formatCurrency from '../scripts/utils/formatCurrency.js';
+import formatPrice from '../scripts/utils/formatPrice.js';
 import { getItem, saveToLocalStorage } from './cart.js';
 
 export const deliveryOptions = [
@@ -46,7 +46,7 @@ export function calculateDeliveryDate(deliveryOption) {
 
 export function calculateShippingPrice(deliveryOption) {
   const priceCents = deliveryOption.priceCents;
-  const shippingPrice = (priceCents === 0) ? 'Free' : `$${formatCurrency(priceCents)}`;
+  const shippingPrice = (priceCents === 0) ? 'Free' : `$${formatPrice(priceCents)}`;
 
   return shippingPrice;
 };

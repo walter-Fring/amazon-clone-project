@@ -1,5 +1,5 @@
 import { products } from '../data/products.js';
-import formatCurrency from './utils/formatCurrency.js';
+import formatPrice from './utils/formatPrice.js';
 
 import { 
   addToCart, 
@@ -27,7 +27,7 @@ function renderProducts() {
           <img class="product-rating-stars" src="images/ratings/rating-${product.rating.stars * 10}.png" alt="product rating stars">
           <div class="product-rating-count">${product.rating.count}</div>
         </div>
-        <div class="product-price">$${formatCurrency(product.priceCents)}</div>
+        <div class="product-price">$${formatPrice(product.priceCents)}</div>
         <div class="product-quantity-container">
           <select class="js-quantity-selector-${product.id} quantity-selector" name="quantity">
             <option selected value="1">1</option>

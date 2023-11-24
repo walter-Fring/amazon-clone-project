@@ -1,5 +1,5 @@
 import { getProduct } from '../../data/products.js';
-import formatCurrency from '../utils/formatCurrency.js';
+import formatPrice from '../utils/formatPrice.js';
 import renderCheckoutHeader from './checkoutHeader.js';
 
 import { 
@@ -41,7 +41,7 @@ export function renderOrderSummary() {
               ${matchingProduct.name}
             </div>
             <div class="product-price">
-              $${formatCurrency(matchingProduct.priceCents)}
+              $${formatPrice(matchingProduct.priceCents)}
             </div>
             <div class="product-quantity-container">
               Quantity:
