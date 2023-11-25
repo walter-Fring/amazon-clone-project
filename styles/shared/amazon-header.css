@@ -26,9 +26,13 @@
 .amazon-header .middle-section {
   flex: 1;
   max-width: 850px;
+  margin-left: 16px;
+  margin-right: 16px;
 }
 
 .amazon-header .right-section {
+  justify-content: end;
+  flex-shrink: 0;
   width: 180px;
 }
 
@@ -40,6 +44,7 @@
 .amazon-header .middle-section
 .search-input {
   flex: 1;
+  width: 0;
   height: 40px;
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
