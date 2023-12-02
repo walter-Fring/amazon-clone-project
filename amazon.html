@@ -18,6 +18,7 @@
     <section class="left-section">
       <a class="header-link" href="amazon.html">
         <img class="amazon-logo" src="images/amazon-logo-white.png" alt="amazon logo">
+        <img class="amazon-logo-mobile" src="images/amazon-mobile-logo-white.png" alt="amazon logo">
       </a>
     </section>
     <section class="middle-section">
@@ -33,10 +34,23 @@
       </a>
       <a class="cart-link header-link" href="checkout.html">
         <img class="cart-icon" src="images/icons/cart-icon.png" alt=" cart icon">
-        <div class="js-cart-quantity cart-quantity">0</div>
+        <div class="js-cart-quantity cart-quantity cart-quantity-label">0</div>
         <div class="cart-text">Cart</div>
       </a>
     </section>
+    <section class="right-section-mobile">
+      <img class="js-hamburger-menu hamburger-menu" src="images/icons/hamburger-menu.png" alt="hamburger menu">
+    </section>
+    <div class="js-hamburger-menu-dropdown hamburger-menu-dropdown">
+      <a class="hamburger-menu-link" href="orders.html">
+        Returns & Orders
+      </a>
+      <a class="hamburger-menu-link" href="checkout.html">
+        Cart (
+          <span class="js-cart-quantity-mobile cart-quantity-mobile cart-quantity-label">0</span>
+        )
+      </a>
+    </div>
   </header>
   <main>
     <div class="products-grid js-products-grid">

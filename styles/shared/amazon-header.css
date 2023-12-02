@@ -1,5 +1,6 @@
 .amazon-header {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   padding-left: 16px;
   padding-right: 16px;
@@ -13,14 +14,14 @@
 
 .amazon-header .left-section,
 .amazon-header .middle-section,
-.amazon-header .right-section {
+.amazon-header .right-section,
+.amazon-header .right-section-mobile {
   display: flex;
   align-items: center;
 }
 
 .amazon-header .left-section {
   width: 180px;
-  padding: 6px;
 }
 
 .amazon-header .middle-section {
@@ -36,8 +37,19 @@
   width: 180px;
 }
 
+.amazon-header .right-section-mobile {
+  display: none;
+  justify-content: center;
+}
+
 .amazon-header .amazon-logo {
   width: 100px;
+  margin-top: 4px;
+}
+
+.amazon-header .amazon-logo-mobile {
+  display: none;
+  height: 35px;
   margin-top: 4px;
 }
 
@@ -118,6 +130,9 @@
   top: 4px;
   left: 22px;
   width: 26px;
+}
+
+.amazon-header .cart-quantity-label {
   font-size: 16px;
   font-weight: 700;
   text-align: center;
@@ -132,4 +147,65 @@
   font-size: 16px;
   font-weight: 700;
   margin-top: 12px;
+}
+
+.hamburger-menu {
+  display: block;
+  padding: 6px;
+  cursor: pointer;
+}
+
+.hamburger-menu-dropdown {
+  background-color: rgb(19, 25, 33);
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 60px;
+  z-index: 100;
+  text-align: center;
+  overflow: hidden;
+  height: 0;
+  transition: height 0.25s;
+}
+
+.hamburger-menu-link {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: background-color 0.15ms;
+}
+
+.hamburger-menu-link:hover {
+  background-color: rgb(38, 50, 63);
+}
+
+@media (max-width: 800px) {
+  .amazon-header .left-section {
+    width: unset;
+  }
+}
+
+@media (max-width: 580px) {
+  .amazon-header .right-section {
+    display: none;
+  }
+
+  .amazon-header .right-section-mobile {
+    display: block;
+  }
+
+  .amazon-header .amazon-logo {
+    display: none;
+  }
+
+  .amazon-header .amazon-logo-mobile {
+    display: block;
+  }
+
+  .hamburger-menu-opened {
+    height: 88px;
+  }
 }

@@ -1,5 +1,6 @@
-import { products } from '../data/products.js';
+import products from '../data/products.js';
 import formatPrice from './utils/formatPrice.js';
+import toggleHamburgerMenu from './shared/amazonHeader.js';
 
 import { 
   addToCart, 
@@ -8,6 +9,7 @@ import {
 
 renderProducts();
 updateCartQuantity();
+toggleHamburgerMenu();
 
 function renderProducts() {
   let productsHTML = '';
@@ -89,5 +91,8 @@ function updateCartQuantity() {
   const cartQuantity = calculateCartQuantity();
 
   document.querySelector('.js-cart-quantity')
+    .innerHTML = cartQuantity;
+
+  document.querySelector('.js-cart-quantity-mobile')
     .innerHTML = cartQuantity;
 };
