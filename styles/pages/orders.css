@@ -7,7 +7,7 @@
 .orders-grid {
   display: grid;
   grid-template-columns: 1fr;
-  row-gap: 60px;
+  row-gap: 48px;
 }
 
 .order-container {
@@ -26,7 +26,13 @@
 
 .order-header .left-section {
   display: flex;
+  flex-shrink: 0;
   column-gap: 48px;
+  margin-right: 48px;
+}
+
+.order-header .right-section {
+  flex-shrink: 1;
 }
 
 .order-header .order-label {
@@ -67,6 +73,7 @@
 .buy-again-btn {
   display: flex;
   align-items: center;
+  justify-content: center;
   column-gap: 16px;
   font-size: 16px;
   width: 140px;
@@ -86,4 +93,79 @@
   width: 100%;
   font-size: 16px;
   padding: 8px;
+}
+
+@media (max-width: 748px) {
+  .product-container {
+    display: grid;
+    grid-template-columns: 108px 1fr;
+  }
+
+  .track-package-btn-container {
+    grid-column: 2;
+    width: 140px;
+  }
+
+  .buy-again-btn {
+    margin-bottom: 8px;
+  }
+}
+
+@media (max-width: 520px) {
+  .order-header {
+    flex-direction: column;
+    padding: 14px;
+  }
+
+  .order-header .left-section {
+    flex-direction: column;
+  }
+
+  .order-header .order-date,
+  .order-header .order-total,
+  .order-header .right-section {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 4px;
+  }
+}
+
+@media (max-width: 450px) {
+  .product-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    column-gap: 0;
+  }
+
+  .product-image-container {
+    text-align: center;
+    margin-bottom: 16px;
+  }
+
+  .product-image {
+    max-width: 148px;
+    max-height: 148px;
+  }
+
+  .product-name {
+    margin-bottom: 8px;
+  }
+
+  .product-quantity {
+    margin-bottom: 16px;
+  }
+
+  .buy-again-btn {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+
+  .track-package-btn-container {
+    grid-column: auto;
+    width: 100%;
+  }
+
+  .track-package-btn {
+    padding: 10px;
+  }
 }
