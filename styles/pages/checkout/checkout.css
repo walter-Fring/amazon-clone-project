@@ -54,6 +54,10 @@ main {
   margin-bottom: 4px;
 }
 
+.link-primary {
+  margin-left: 4px;
+}
+
 .new-quantity-input {
   width: 48px;
   font-size: 16px;
@@ -159,4 +163,31 @@ main {
   padding-top: 12px;
   padding-bottom: 12px;
   border-radius: 8px;
+}
+
+@media (max-width: 1000px) {
+  main {
+    max-width: 500px;
+  }
+
+  .checkout-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cart-summary {
+    grid-row: 2;
+  }
+
+  .cart-item-details-grid {
+    grid-template-columns: 100px 1fr;
+    row-gap: 32px;
+  }
+
+  .product-item-details {
+    grid-column: span;
+  }
+
+  .delivery-options {
+    grid-column: 1 / span 2;
+  }
 }

@@ -52,7 +52,6 @@ main {
 
 .link-primary {
   color: #017cb6;
-  margin-left: 4px;
   cursor: pointer;
   transition: color 0.15ms;
 }
