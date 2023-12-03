@@ -43,6 +43,12 @@
   margin-top: 18px;
 }
 
+.checkout-header .amazon-logo-mobile {
+  display: none;
+  height: 35px;
+  margin-top: 4px;
+}
+
 .checkout-header .middle-section {
   font-size: 24px;
   font-weight: 500;
@@ -53,4 +59,25 @@
 .return-to-home-link {
   color: rgb(0, 113, 133);
   text-decoration: none;
+}
+
+@media (max-width: 1000px) {
+  .checkout-header .middle-section {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 580px) {
+  .checkout-header .amazon-logo-mobile {
+    display: block;
+  }
+
+  .checkout-header .amazon-logo {
+    display: none;
+  }
+
+  .checkout-header .left-section,
+  .checkout-header .right-section {
+    width: unset;
+  }
 }
