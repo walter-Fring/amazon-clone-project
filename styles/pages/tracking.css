@@ -65,3 +65,10 @@
   background-color: green;
   border-radius: 50px;
 }
+
+@media (max-width: 578px) {
+  .order-tracking .progress-bar
+  .progress-label {
+  font-size: 16px;
+}
+}
