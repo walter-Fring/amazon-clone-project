@@ -1,4 +1,6 @@
-export let cart = initializedCart();
+export let cart;
+
+initializedCart();
 
 export function addToCart(productId) {
   const selectElem = document.querySelector(`.js-quantity-selector-${productId}`);
@@ -53,8 +55,8 @@ export function getItem(productId) {
   return matchingItem;
 };
 
-function initializedCart() {
-  return JSON.parse(localStorage.getItem('cart')) || [
+export function initializedCart() {
+  cart = JSON.parse(localStorage.getItem('cart')) || [
     {
       productId: "e23b3vce-6aa0-4b85-b27f-e1d07eb678c6",
       quantity: 3,
