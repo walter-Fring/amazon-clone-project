@@ -1,6 +1,6 @@
 export let cart;
 
-initializedCart();
+initializedCart()
 
 export function addToCart(productId) {
   const selectElem = document.querySelector(`.js-quantity-selector-${productId}`);
@@ -68,7 +68,7 @@ export function initializedCart() {
       deliveryOptionId: '2'
     }
   ];
-}
+};
 
 export function saveToLocalStorage() {
   localStorage.setItem('cart', JSON.stringify(cart));
