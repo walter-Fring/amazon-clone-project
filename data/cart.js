@@ -2,10 +2,7 @@ export let cart;
 
 initializedCart()
 
-export function addToCart(productId) {
-  const selectElem = document.querySelector(`.js-quantity-selector-${productId}`);
-  const quantity = Number(selectElem.value);
-
+export function addToCart(productId, quantity=1) {
   const matchingItem = getItem(productId);
 
   if (matchingItem) {
