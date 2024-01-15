@@ -15,7 +15,8 @@ import {
 } from '../../data/cart.js';
 
 import formatPrice from '../utils/formatPrice.js';
-import renderCheckoutPage from '../checkout.js';
+import renderCheckoutHeader from './checkoutHeader.js';
+import renderPaymentSummary from './paymentSummary.js';
 
 export function renderOrderSummary() {
   let orderSummaryHTML = '';
@@ -28,7 +29,8 @@ export function renderOrderSummary() {
     const deliveryDate = calculateDeliveryDate(deliveryOption);
 
     orderSummaryHTML += `
-      <div class="js-cart-item-container-${matchingProduct.id} cart-item-container">
+      <div class="js-cart-item-container-${matchingProduct.id} cart-item-container
+        js-item-container">
         <div class="delivery-date">
           Delivery date:
           <span>${deliveryDate}</span>
@@ -44,7 +46,8 @@ export function renderOrderSummary() {
             <div class="product-price">
               $${formatPrice(matchingProduct.priceCents)}
             </div>
-            <div class="product-quantity-container">
+            <div class="product-quantity-container
+              js-product-quantity-container-${matchingProduct.id}">
               Quantity:
               <span class="quantity-label">${cartItem.quantity}</span>
               <input class="js-new-quantity-input-${productId} js-new-quantity-input new-quantity-input" type="number" value="${cartItem.quantity}" data-product-id="${matchingProduct.id}">
@@ -99,7 +102,10 @@ export function renderOrderSummary() {
     deliveryOption.addEventListener('click', () => {
       const { productId, deliveryOptionId } = deliveryOption.dataset;
       updateDeliveryOption(productId, deliveryOptionId);
-      renderCheckoutPage();
+      
+      renderCheckoutHeader();
+      renderOrderSummary();
+      renderPaymentSummary();
     });
   });
 
@@ -123,7 +129,10 @@ export function renderOrderSummary() {
     deleteLink.addEventListener('click', () => {
       const { productId } = deleteLink.dataset;
       removeItemFromCart(productId);
-      renderCheckoutPage();
+      
+      renderCheckoutHeader();
+      renderOrderSummary();
+      renderPaymentSummary();
     });
   });
 
@@ -143,7 +152,10 @@ export function renderOrderSummary() {
     }
 
     updateQuantity(productId, newQuantity);
-    renderCheckoutPage();
+    
+    renderCheckoutHeader();
+    renderOrderSummary();
+    renderPaymentSummary();
 
     const cartItemContainer = getItemContainer(productId);
     cartItemContainer.classList.remove('is-editing-quantity');
