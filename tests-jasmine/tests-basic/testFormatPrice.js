@@ -1,4 +1,4 @@
-import formatPrice from '../scripts/utils/formatPrice.js';
+import formatPrice from '../../scripts/utils/formatPrice.js';
 
 function testFormatPrice(price, testCase, caseName) {
   console.log(caseName);
