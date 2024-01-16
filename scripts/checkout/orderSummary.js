@@ -79,10 +79,12 @@ export function renderOrderSummary() {
       const isChecked = deliveryOption.id === cartItem.deliveryOptionId;
 
       deliveryOptionsHTML += `
-        <div class="js-delivery-option delivery-option"
+        <div class="js-delivery-option delivery-option
+          js-delivery-option-${matchingProduct.id}-${deliveryOption.id}"
           data-product-id="${matchingProduct.id}"
           data-delivery-option-id="${deliveryOption.id}">
-          <input class="delivery-option-input" type="radio" ${isChecked ? 'checked' : ''}>
+          <input class="delivery-option-input
+            js-delivery-option-input-${matchingProduct.id}-${deliveryOption.id}" type="radio" ${isChecked ? 'checked' : ''}>
           <div class="delivery-option-details">
             <div class="delivery-option-date">
               ${deliveryDate}

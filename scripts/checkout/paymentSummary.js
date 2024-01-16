@@ -24,7 +24,7 @@ export function renderPaymentSummary() {
       Order Summary
     </div>
 
-    <div class="payment-summary-container">
+    <div class="payment-summary-container js-payment-summary-container">
       <div class="payment-summary-row">
         <div>Items (${cart.length}):</div>
         <div class="payment-summary-money">
