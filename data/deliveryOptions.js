@@ -53,7 +53,13 @@ export function calculateShippingPrice(deliveryOption) {
 
 export function updateDeliveryOption(productId, deliveryOptionId) {
   const matchingItem = getItem(productId);
-  matchingItem.deliveryOptionId = deliveryOptionId;
+  const matchingDeliveryOption = getDeliveryOption(deliveryOptionId);
+
+  if (!matchingItem || !matchingDeliveryOption) {
+    return;
+  }
+
+  matchingItem.deliveryOptionId = matchingDeliveryOption.id;
   saveToLocalStorage();
 };
 
