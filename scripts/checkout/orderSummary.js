@@ -29,7 +29,7 @@ export function renderOrderSummary() {
 
     orderSummaryHTML += `
       <div class="js-cart-item-container-${matchingProduct.id} cart-item-container
-        js-item-container">
+        js-cart-item-container">
         <div class="delivery-date">
           Delivery date:
           <span>${deliveryDate}</span>
