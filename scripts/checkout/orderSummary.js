@@ -40,10 +40,10 @@ export function renderOrderSummary() {
             <img class="product-image" src="${matchingProduct.image}" alt="product image">
           </div>
           <div class="product-item-details">
-            <div class="product-name">
+            <div class="product-name js-product-name-${matchingProduct.id}">
               ${matchingProduct.name}
             </div>
-            <div class="product-price">
+            <div class="product-price js-product-price-${matchingProduct.id}">
               $${formatPrice(matchingProduct.priceCents)}
             </div>
             <div class="product-quantity-container
