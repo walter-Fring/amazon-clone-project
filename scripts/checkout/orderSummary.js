@@ -15,8 +15,7 @@ import {
 } from '../../data/cart.js';
 
 import formatPrice from '../utils/formatPrice.js';
-import renderCheckoutHeader from './checkoutHeader.js';
-import renderPaymentSummary from './paymentSummary.js';
+import renderCheckoutPage from '../checkout.js';
 
 export function renderOrderSummary() {
   let orderSummaryHTML = '';
@@ -53,7 +52,7 @@ export function renderOrderSummary() {
               <input class="js-new-quantity-input-${productId} js-new-quantity-input new-quantity-input" type="number" value="${cartItem.quantity}" data-product-id="${matchingProduct.id}">
               <span class="js-save-quantity-link save-quantity-link link-primary" data-product-id="${matchingProduct.id}">Save</span>
               <span class="js-update-quantity-link update-quantity-link link-primary" data-product-id="${matchingProduct.id}">Update</span>
-              <span class="js-delete-quantity-link delete-quantity-link link-primary" data-product-id="${matchingProduct.id}">Delete</span>
+              <span class="js-delete-quantity-link js-delete-quantity-link-${matchingProduct.id} delete-quantity-link link-primary" data-product-id="${matchingProduct.id}">Delete</span>
             </div>
           </div>
           <div class="js-delivery-options delivery-options">
@@ -103,9 +102,7 @@ export function renderOrderSummary() {
       const { productId, deliveryOptionId } = deliveryOption.dataset;
       updateDeliveryOption(productId, deliveryOptionId);
       
-      renderCheckoutHeader();
-      renderOrderSummary();
-      renderPaymentSummary();
+      renderCheckoutPage();
     });
   });
 
@@ -130,9 +127,7 @@ export function renderOrderSummary() {
       const { productId } = deleteLink.dataset;
       removeItemFromCart(productId);
       
-      renderCheckoutHeader();
-      renderOrderSummary();
-      renderPaymentSummary();
+      renderCheckoutPage();
     });
   });
 
@@ -153,9 +148,7 @@ export function renderOrderSummary() {
 
     updateQuantity(productId, newQuantity);
     
-    renderCheckoutHeader();
-    renderOrderSummary();
-    renderPaymentSummary();
+    renderCheckoutPage();
 
     const cartItemContainer = getItemContainer(productId);
     cartItemContainer.classList.remove('is-editing-quantity');
