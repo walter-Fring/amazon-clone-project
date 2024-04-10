@@ -57,6 +57,29 @@ class Clothing extends Product {
   }
 };
 
+class Appliance extends Product {
+  instructionLink;
+  warrantyLink;
+
+  constructor(productDetails) {
+    super(productDetails);
+    this.instructionLink = productDetails.instructionLink;
+    this.warrantyLink = productDetails.warrantyLink;
+  }
+
+  extraInfoHTML() {
+    return `
+      <a href="${this.instructionLink}" target="_blank">
+        Instructions
+      </a>
+
+      <a href="${this.warrantyLink}" target="_blank">
+        Warranty
+      </a>
+    `;
+  }
+}
+
 export const products = [
   {
     id: "e23b3vce-6aa0-4b85-b27f-e1d07eb678c6",
@@ -130,7 +153,10 @@ export const products = [
       "toaster",
       "kitchen",
       "appliances"
-    ]
+    ],
+    type: "appliance",
+    instructionLink: "images/appliance-instructions.png",
+    warrantyLink: "images/appliance-warranty.png"
   },
   {
     id: "3ebe75dc-64d2-4137-8860-1f5a963e534b",
@@ -315,7 +341,10 @@ export const products = [
       "water boiler",
       "appliances",
       "kitchen"
-    ]
+    ],
+    type: "appliance",
+    instructionLink: "images/appliance-instructions.png",
+    warrantyLink: "images/appliance-warranty.png"
   },
   {
     id: "6b07d4e7-f540-454e-8a1e-363f25dbae7d",
@@ -680,7 +709,10 @@ export const products = [
       "food blenders",
       "kitchen",
       "appliances"
-    ]
+    ],
+    type: "appliance",
+    instructionLink: "images/appliance-instructions.png",
+    warrantyLink: "images/appliance-warranty.png"
   },
   {
     id: "36c64692-677f-4f58-b5ec-0dc2cf109e27",
@@ -732,6 +764,8 @@ export const products = [
 ].map((productDetails) => {
   if (productDetails.type === 'clothing') {
     return new Clothing(productDetails);
+  } else if (productDetails.type === 'appliance') {
+    return new Appliance(productDetails);
   }
 
   return new Product(productDetails);
