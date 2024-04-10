@@ -107,6 +107,10 @@ main {
   border-radius: 64px;
 }
 
+.product-spacer {
+  flex: 1;
+}
+
 @media (max-width: 1300px) {
   .products-grid {
     grid-template-columns: repeat(5, 1fr);
