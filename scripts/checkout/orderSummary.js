@@ -1,4 +1,7 @@
 import { getProduct } from '../../data/products.js';
+import { cart } from '../../data/cart-class.js';
+import renderCheckoutHeader from './checkoutHeader.js';
+import renderPaymentSummary from './paymentSummary.js';
 
 import { 
   deliveryOptions, 
@@ -8,20 +11,10 @@ import {
   getDeliveryOption
 } from '../../data/deliveryOptions.js';
 
-import { 
-  cart, 
-  updateQuantity,
-  removeItemFromCart 
-} from '../../data/cart.js';
-
-import formatPrice from '../utils/formatPrice.js';
-import renderCheckoutHeader from './checkoutHeader.js';
-import renderPaymentSummary from './paymentSummary.js';
-
 export function renderOrderSummary() {
   let orderSummaryHTML = '';
 
-  cart.forEach((cartItem) => {
+  cart.cartItems.forEach((cartItem) => {
     const productId = cartItem.productId;
     const matchingProduct = getProduct(productId);
     
@@ -130,7 +123,7 @@ export function renderOrderSummary() {
   document.querySelectorAll('.js-delete-quantity-link').forEach((deleteLink) => {
     deleteLink.addEventListener('click', () => {
       const { productId } = deleteLink.dataset;
-      removeItemFromCart(productId);
+      cart.removeItemFromCart(productId);
       
       renderCheckoutHeader();
       renderOrderSummary();
@@ -153,7 +146,7 @@ export function renderOrderSummary() {
       return;
     }
 
-    updateQuantity(productId, newQuantity);
+    cart.updateQuantity(productId, newQuantity);
     
     renderCheckoutHeader();
     renderOrderSummary();

@@ -1,6 +1,6 @@
 import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
 import formatPrice from '../scripts/utils/formatPrice.js';
-import { getItem, saveToLocalStorage } from './cart.js';
+import { cart } from './cart-class.js';
 
 export const deliveryOptions = [
   {
@@ -52,7 +52,7 @@ export function calculateShippingPrice(deliveryOption) {
 };
 
 export function updateDeliveryOption(productId, deliveryOptionId) {
-  const matchingItem = getItem(productId);
+  const matchingItem = cart.getItem(productId);
   const matchingDeliveryOption = getDeliveryOption(deliveryOptionId);
 
   if (!matchingItem || !matchingDeliveryOption) {
@@ -60,7 +60,7 @@ export function updateDeliveryOption(productId, deliveryOptionId) {
   }
 
   matchingItem.deliveryOptionId = matchingDeliveryOption.id;
-  saveToLocalStorage();
+  cart.saveToLocalStorage();
 };
 
 export function getDeliveryOption(deliveryOptionId) {

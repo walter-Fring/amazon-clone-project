@@ -1,13 +1,13 @@
 import { getProduct } from '../../data/products.js';
 import { getDeliveryOption } from '../../data/deliveryOptions.js';
-import { cart } from '../../data/cart.js';
+import { cart } from '../../data/cart-class.js';
 import formatPrice from '../utils/formatPrice.js';
 
 export function renderPaymentSummary() {
   let priceCostCents = 0;
   let shippingCostCents = 0;
 
-  cart.forEach((cartItem) => {
+  cart.cartItems.forEach((cartItem) => {
     const matchingProduct = getProduct(cartItem.productId);
     const deliveryOption = getDeliveryOption(cartItem.deliveryOptionId);
 
@@ -26,7 +26,7 @@ export function renderPaymentSummary() {
 
     <div class="payment-summary-container js-payment-summary-container">
       <div class="payment-summary-row">
-        <div>Items (${cart.length}):</div>
+        <div>Items (${cart.cartItems.length}):</div>
         <div class="payment-summary-money">
           $${formatPrice(priceCostCents)}
         </div>

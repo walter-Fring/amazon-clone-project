@@ -1,11 +1,6 @@
 import products from '../data/products.js';
-import formatPrice from './utils/formatPrice.js';
 import toggleHamburgerMenu from './shared/amazonHeader.js';
-
-import { 
-  addToCart, 
-  calculateCartQuantity
-} from '../data/cart.js';
+import { cart } from '../data/cart-class.js';
 
 renderProducts();
 updateCartQuantity();
@@ -78,7 +73,7 @@ document.querySelectorAll('.js-add-to-cart-btn').forEach((button) => {
     const { productId } = button.dataset;
     const quantity = getItemQuantity(productId);
 
-    addToCart(productId, quantity);
+    cart.addToCart(productId, quantity);
     updateCartQuantity();
 
     const previousTimeoutId = addedMessageTimeoutId
@@ -99,7 +94,7 @@ document.querySelectorAll('.js-add-to-cart-btn').forEach((button) => {
 });
 
 function updateCartQuantity() {
-  const cartQuantity = calculateCartQuantity();
+  const cartQuantity = cart.calculateCartQuantity();
 
   document.querySelector('.js-cart-quantity')
     .innerHTML = cartQuantity;
