@@ -77,10 +77,4 @@ class Cart {
   }
 };
 
-const cart = new Cart('cart-oop');
-const cartBusiness = new Cart('cart-business');
-
-cart.addToCart('54e0eccd-8f36-462b-b68a-8182611d9add');
-
-console.log(cart);
-console.log(cartBusiness);
+export const cart = new Cart('cart-oop');
